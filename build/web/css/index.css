@@ -103,6 +103,32 @@ main>section:first-child {
   border-radius: 2px;
   cursor: pointer;
 }
+.user-info>.btn {
+    background: #34d9ad;
+    background-image: -webkit-linear-gradient(top, #34d9ad, #2b78b8);
+    background-image: -moz-linear-gradient(top, #34d9ad, #2b78b8);
+    background-image: -ms-linear-gradient(top, #34d9ad, #2b78b8);
+    background-image: -o-linear-gradient(top, #34d9ad, #2b78b8);
+    background-image: linear-gradient(to bottom, #34d9ad, #2b78b8);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 10px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 6px 10px 6px 10px;
+    text-decoration: none;
+    animation: .3s;
+}
+.user-info>.btn:hover {
+  background: #3cfcef;
+  background-image: -webkit-linear-gradient(top, #3cfcef, #3498db);
+  background-image: -moz-linear-gradient(top, #3cfcef, #3498db);
+  background-image: -ms-linear-gradient(top, #3cfcef, #3498db);
+  background-image: -o-linear-gradient(top, #3cfcef, #3498db);
+  background-image: linear-gradient(to bottom, #3cfcef, #3498db);
+  text-decoration: none;
+}
 footer {
   position: absolute;
   bottom: 0;
