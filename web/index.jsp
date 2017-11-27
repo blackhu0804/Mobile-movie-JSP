@@ -17,6 +17,29 @@
         <link rel="stylesheet" href="./css/index.css">
     </head>
     <body>
+        <header>
+            <div class="user-info">
+                <%
+                    String username=(String)session.getAttribute("username");
+                    if(username==null){
+                        %>
+                            <span>您还没有登陆，请选择：</span>
+                            <a class="logout-btn" href="signIn.jsp">登录</a>
+                            <a class="logout-btn" href="signUp.jsp">注册</a>
+                        <% 
+                    }else{
+                %>
+                <div class="logout">
+                    <span>欢迎${username}</span>
+                    <form action="./logout.jsp">
+                        <button type="submit" class="logout-btn">登出</button>
+                    </form>
+                </div>
+                <%
+                    }
+                %>
+            </div>
+        </header>
         <main>
         <section id="top250">
             <div class="container"></div>
@@ -77,31 +100,11 @@
             <span class="iconfont icon-loading"></span>
           </div>
         </section>
-        <section id="user">
-            <div class="user-info">
-                <%
-                    String username=(String)session.getAttribute("username");
-                    if(username==null){
-                        %>
-                            <a class="btn" href="signIn.jsp">登录</a>
-                            <a class="btn" href="signUp.jsp">注册</a>
-                        <% 
-                    }else{
-                %>
-                <div class="info-name">
-                    欢迎${username}
-                </div>
-                <%
-                    }
-                %>
-            </div>
-        </section>
       </main>  
   <footer>
     <div class="active"><span class="iconfont icon-top250"></span><span>Top250</span></div>
     <div><span class="iconfont icon-us"></span><span>北美</span></div>
     <div><span class="iconfont icon-search"></span><span>搜索</span></div>
-    <div><span class="iconfont icon-yonghu"></span><span>用户</span></div>
   </footer>  
     <script src="./js/jquery.min.js"></script>
     <script src="./js/js.js"></script>

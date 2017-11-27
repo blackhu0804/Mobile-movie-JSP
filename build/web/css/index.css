@@ -17,7 +17,7 @@ body {
 }
 
 main {
-  height: 100%;
+  height: 95%;
   -webkit-overflow-scrolling: touch;
 }
 main>section {
@@ -103,31 +103,52 @@ main>section:first-child {
   border-radius: 2px;
   cursor: pointer;
 }
-.user-info>.btn {
-    background: #34d9ad;
-    background-image: -webkit-linear-gradient(top, #34d9ad, #2b78b8);
-    background-image: -moz-linear-gradient(top, #34d9ad, #2b78b8);
-    background-image: -ms-linear-gradient(top, #34d9ad, #2b78b8);
-    background-image: -o-linear-gradient(top, #34d9ad, #2b78b8);
-    background-image: linear-gradient(to bottom, #34d9ad, #2b78b8);
-    -webkit-border-radius: 28;
-    -moz-border-radius: 28;
-    border-radius: 10px;
-    font-family: Arial;
-    color: #ffffff;
-    font-size: 16px;
-    padding: 6px 10px 6px 10px;
-    text-decoration: none;
-    animation: .3s;
+header {
+    height: 5%;
+    overflow: hidden;
 }
-.user-info>.btn:hover {
-  background: #3cfcef;
-  background-image: -webkit-linear-gradient(top, #3cfcef, #3498db);
-  background-image: -moz-linear-gradient(top, #3cfcef, #3498db);
-  background-image: -ms-linear-gradient(top, #3cfcef, #3498db);
-  background-image: -o-linear-gradient(top, #3cfcef, #3498db);
-  background-image: linear-gradient(to bottom, #3cfcef, #3498db);
-  text-decoration: none;
+header>.user-info {
+    margin-top: 1px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.logout {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.user-info span {
+    font-size: 16px;
+    line-height: 30px;
+}
+.logout-btn {
+    color: #666;
+    background-color: #EEE;
+    border-color: #EEE;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    padding: 0 20px;
+    margin: 0;
+    display: inline-block;
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #FEAE1B;
+    border-color: #FEAE1B;
+    color: #FFF;
+    border-radius: 5px;
+}
+.logout-btn:hover {
+    opacity: .8;
 }
 footer {
   position: absolute;
