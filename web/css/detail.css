@@ -1,0 +1,76 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 2017-12-2, 10:56:55
+    Author     : Administrator
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 16px;
+}
+#movieDetail {
+    position: relative;
+    margin: 1rem;
+}
+.detail .header {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    overflow: hidden;
+    background-size: cover;
+    font-family: "幼圆";
+}
+.detail .detail-info .extra {
+    margin-bottom: .3rem;
+}
+.detail .detail-info h2 {
+    font-size: 1.5rem;
+}
+.detail .detail-info .score {
+    color: #ffa84c;
+    font-weight: bold;
+}
+.poster-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: 3000%;
+    background-repeat: no-repeat;
+    background-position-y: 40%;
+    -webkit-backface-visibility: hidden;
+    z-index: -1;
+}
+.poster-bg:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .7;
+}
+.detail .header > img {
+    height: 10rem;
+}
+.detail .header .detail-info {
+    padding-left: .75em;
+}
+.movie-introduction {
+    padding: 1rem;
+}
+#toggle {
+    color: #166da1;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bolder;
+    margin: 0px 1rem;
+    padding: .5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}

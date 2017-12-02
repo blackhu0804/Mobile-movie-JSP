@@ -62,7 +62,7 @@
             %>
             <div class="container">
                 <div class="item">
-                        <a href="#">
+                        <a href="#"  onclick="detail(<%=rs.getString("id")%>);">
                                 <div class="cover">
                                         <img src=<%=rs.getString("img") %> alt="">          
                                 </div>
@@ -100,13 +100,21 @@
             <span class="iconfont icon-loading"></span>
           </div>
         </section>
-      </main>  
-  <footer>
-    <div class="active"><span class="iconfont icon-top250"></span><span>Top250</span></div>
-    <div><span class="iconfont icon-us"></span><span>北美</span></div>
-    <div><span class="iconfont icon-search"></span><span>搜索</span></div>
-  </footer>  
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/js.js"></script>
+    </main>  
+    <footer>
+      <div class="active"><span class="iconfont icon-top250"></span><span>Top250</span></div>
+      <div><span class="iconfont icon-us"></span><span>北美</span></div>
+      <div><span class="iconfont icon-search"></span><span>搜索</span></div>
+    </footer>  
+        
+        <script>
+            function detail(id){
+                var a = document.createElement("a");
+                a.href = "detail.jsp?id=" + id; 
+                a.click();//触发打开事件
+            }
+        </script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/js.js"></script>
     </body>
 </html>
