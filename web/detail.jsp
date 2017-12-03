@@ -68,6 +68,9 @@
                 <p class="comment-content">这部电影真的太棒了</p>
             </div>
         </section>
+        <section class="submit">
+            
+        </section>
     </body>
     <script src="./js/jquery.min.js"></script>
     <script type="text/javascript">
