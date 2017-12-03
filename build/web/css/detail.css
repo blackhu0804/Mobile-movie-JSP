@@ -64,6 +64,10 @@ html {
 .movie-introduction {
     padding: 1rem;
 }
+.movie-introduction .itr-info {
+    text-indent: 2em;
+    line-height: 1.4;
+}
 #toggle {
     color: #166da1;
     text-align: center;
@@ -73,4 +77,17 @@ html {
     padding: .5rem 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+}
+.comment {
+    padding: 1rem;
+}
+.comment .row {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ccc;
+}
+.comment .row .comment-user {
+    margin-bottom: .5rem;
+}
+.comment .row .comment-content {
+    text-indent: 2em;
 }

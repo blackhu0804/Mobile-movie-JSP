@@ -41,7 +41,7 @@
         
         </section>
         <section class="movie-introduction" id="introduction" style="display: none;">
-            <%=rs.getString("detail")%>
+            <p class="itr-info"><%=rs.getString("detail")%></p>
         </section>
         <p id="toggle">展开介绍</p>
         <%
@@ -50,20 +50,36 @@
             stmt.close();
             con.close();
         %>
+        <section class="comment">
+            <div class="row">
+                <p class="comment-user">xxx说：</p>
+                <p class="comment-content">这部电影真的太棒了</p>
+            </div>
+            <div class="row">
+                <p class="comment-user">xxx说：</p>
+                <p class="comment-content">这部电影真的太棒了</p>
+            </div>
+            <div class="row">
+                <p class="comment-user">xxx说：</p>
+                <p class="comment-content">这部电影真的太棒了</p>
+            </div>
+            <div class="row">
+                <p class="comment-user">xxx说：</p>
+                <p class="comment-content">这部电影真的太棒了</p>
+            </div>
+        </section>
     </body>
     <script src="./js/jquery.min.js"></script>
     <script type="text/javascript">
     $(function() {
         $("#toggle").click(function() {
-            $("#introduction").slideToggle();
             if($("#introduction").is(":hidden")) {
-                console.log(1111)
-                $("#toggle").text("展开介绍")
-            }else{
-                console.log(2222)
+                $("#introduction").slideToggle(500);
                 $("#toggle").text("收起介绍")
+            }else{
+                $("#introduction").slideToggle(500);
+                $("#toggle").text("展开介绍")
             }
-            //$(this).text($("#content").is(":hidden") ? "展开介绍" : "收起介绍");
         });
     });
     </script>
