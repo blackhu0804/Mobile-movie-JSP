@@ -68,8 +68,9 @@
                 <p class="comment-content">这部电影真的太棒了</p>
             </div>
         </section>
-        <section class="submit">
-            
+        <section class="submit-comment">
+            <textArea placeholder="请填写您的评论"></textArea>
+            <button type="submit" class="sub-button">提交</button>
         </section>
     </body>
     <script src="./js/jquery.min.js"></script>

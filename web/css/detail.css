@@ -91,3 +91,40 @@ html {
 .comment .row .comment-content {
     text-indent: 2em;
 }
+.submit-comment {
+    margin: 1rem;
+}
+.submit-comment textArea {
+    width: 100%;
+    height: 4rem;
+    border-radius: .5rem;
+    outline: none;
+    padding: .5rem 0;
+}
+.submit-comment .sub-button {
+    color: #666;
+    background-color: #EEE;
+    border-color: #EEE;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    padding: 0 20px;
+    margin: 0;
+    display: inline-block;
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #FEAE1B;
+    border-color: #FEAE1B;
+    color: #FFF;
+    border-radius: 5px;
+    float: right;
+    margin-top: .5rem;
+}
