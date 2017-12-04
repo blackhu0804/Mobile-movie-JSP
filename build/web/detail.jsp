@@ -51,26 +51,45 @@
             con.close();
         %>
         <section class="comment">
+            <%
+                Connection con1=null;
+                Statement stmt1=null;
+                ResultSet rs1=null;
+                Class.forName("com.mysql.jdbc.Driver");
+                String url1="jdbc:mysql://localhost:3306/movie?useUnicode=true&characterEncoding=gbk";
+                con=DriverManager.getConnection(url,"root","root");
+                stmt=con.createStatement();
+                String sql1="select * from comment where movieId = " + idInfo;
+                rs=stmt.executeQuery(sql1);
+                while(rs.next()){
+            %>
             <div class="row">
-                <p class="comment-user">xxx说：</p>
-                <p class="comment-content">这部电影真的太棒了</p>
+                <div>
+                    <p class="comment-user"><%=rs.getString("username")%>说：</p>
+                    <p class="comment-time"><%=rs.getString("commentTime")%></p>
+                </div>
+                <p class="comment-content"><%=rs.getString("comment")%></p>
             </div>
-            <div class="row">
-                <p class="comment-user">xxx说：</p>
-                <p class="comment-content">这部电影真的太棒了</p>
-            </div>
-            <div class="row">
-                <p class="comment-user">xxx说：</p>
-                <p class="comment-content">这部电影真的太棒了</p>
-            </div>
-            <div class="row">
-                <p class="comment-user">xxx说：</p>
-                <p class="comment-content">这部电影真的太棒了</p>
-            </div>
+            <%
+                }
+                rs.close();
+                stmt.close();
+                con.close();
+            %>
         </section>
         <section class="submit-comment">
-            <textArea placeholder="请填写您的评论"></textArea>
-            <button type="submit" class="sub-button">提交</button>
+            <%   
+                java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");   
+                java.util.Date currentTime = new java.util.Date();//得到当前系统时间   
+                String str_date= formatter.format(currentTime); //将日期时间格式化  
+            %>  
+            <form action="addComment.jsp" method="post">
+                <input name="idInfo" value="<%=idInfo%>"/>
+                <input name="comment-user" value="<%=(String)session.getAttribute("username")%>"/>
+                <input name="comment-time" value="<%=str_date%>"/>
+                <textArea  name="commentContent" placeholder="请填写您的评论"></textArea>
+                <button type="submit" class="sub-button">提交</button>
+            </form>
         </section>
     </body>
     <script src="./js/jquery.min.js"></script>

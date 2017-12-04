@@ -19,7 +19,7 @@
 	//stmt=con.createStatement();
 	String sql="select * from user where username='"+username+"'and password='"+password+"'";
 	
-    stmt=con.prepareStatement(sql);
+        stmt=con.prepareStatement(sql);
 	
 
 	ResultSet rs=stmt.executeQuery(sql);

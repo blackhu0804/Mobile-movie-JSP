@@ -85,6 +85,10 @@ html {
     padding: 1rem 0;
     border-bottom: 1px solid #ccc;
 }
+.comment .row>div {
+    display: flex;
+    justify-content: space-between;
+}
 .comment .row .comment-user {
     margin-bottom: .5rem;
 }
@@ -93,6 +97,9 @@ html {
 }
 .submit-comment {
     margin: 1rem;
+}
+.submit-comment  form  input {
+   display: none;
 }
 .submit-comment textArea {
     width: 100%;
