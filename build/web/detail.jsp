@@ -9,7 +9,12 @@
         <link rel="stylesheet" href="./css/detail.css">
     </head>
     <body>
-        
+        <%
+            String username = (String)session.getAttribute("username");
+            if (username == null) {
+               out.print("<script>alert('您还没有登陆！'); window.document.location.href='./signIn.jsp';</script>");
+            }
+        %>
         <section id="movieDetail">
         <%
             String idInfo = request.getParameter("id");

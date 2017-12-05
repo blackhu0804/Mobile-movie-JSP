@@ -59,7 +59,7 @@
             String sql="select * from movie_info";
             rs=stmt.executeQuery(sql);
             while(rs.next()){
-            %>
+        %>
             <div class="container">
                 <div class="item">
                         <a href="#"  onclick="detail(<%=rs.getString("id")%>);">
