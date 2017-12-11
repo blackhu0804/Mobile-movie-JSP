@@ -48,7 +48,10 @@
             </div>
         </section>
         <section id="beimei">
+            <jsp:useBean id="db" class="sql.connect.connect" scope="page">  
+            </jsp:useBean> 
         <%
+            /*
             Connection con=null;
             Statement stmt=null;
             ResultSet rs=null;
@@ -56,8 +59,10 @@
             String url="jdbc:mysql://localhost:3306/movie?useUnicode=true&characterEncoding=gbk";
             con=DriverManager.getConnection(url,"root","root");
             stmt=con.createStatement();
+            */
             String sql="select * from movie_info";
-            rs=stmt.executeQuery(sql);
+            ResultSet rs = db.select(sql);  
+            //rs=stmt.executeQuery(sql);
             while(rs.next()){
         %>
             <div class="container">
@@ -82,8 +87,8 @@
          <%
             }
             rs.close();
-            stmt.close();
-            con.close();
+            //stmt.close();
+            //con.close();
         %>
         </section>
 
