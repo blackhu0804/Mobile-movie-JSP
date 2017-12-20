@@ -42,6 +42,7 @@
                     </div>
 		</div>
 		<!-- 头部 -->
+		<!-- <img src="/Movie/img/progress.gif"> -->
 		<header>
                     <!-- logo -->
                     <div class="am-fl tpl-header-logo">
@@ -166,6 +167,6 @@
 	</div>
 	</div>
 	<script src="assets/js/amazeui.min.js"></script>
-        <script src="assets/js/app.js"></script>
+    <script src="assets/js/app.js"></script>
     </body>
 </html>

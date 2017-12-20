@@ -99,8 +99,8 @@
             <div class="tpl-content-wrapper" style="color: #fff;">
                 <%
                     String movieId=request.getParameter("movieId");
-                    byte b1[]=movieId.getBytes("ISO-8859-1");
-                    movieId = new String(b1,"utf-8");
+                    /* byte b1[]=movieId.getBytes("ISO-8859-1");
+                    movieId = new String(b1,"utf-8"); */
                     
                     Connection con=null;
                     Statement stmt=null;
@@ -113,7 +113,8 @@
                     rs=stmt.executeQuery(sql);
                     while(rs.next()){
                 %>
-                <form class="am-form am-form-horizontal" action="./addMovieToSql.jsp" style="padding: 16px 48px;">
+                <form class="am-form am-form-horizontal" action="./uploadMovieToSql.jsp" style="padding: 16px 48px;">
+                	<input name="movieId" style="color:black;display:none;" value=<%=movieId%> >
                     <div class="row">
                         <label>电影名:</label>
                         <input name="movieName" type="text" placeholder="请输入要添加的电影名称" value="<%=rs.getString("movieName")%>">

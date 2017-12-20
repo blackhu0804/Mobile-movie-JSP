@@ -1,16 +1,20 @@
-<%@ page language="java" import="java.util.*,java.io.*" pageEncoding="GBK"%>
+<%@ page language="java" import="java.util.*,java.io.*" pageEncoding="UTF-8"%>
 <%@ page import="org.apache.commons.fileupload.servlet.ServletFileUpload"%>
 <%@ page import="org.apache.commons.fileupload.disk.DiskFileItemFactory"%>
 <%@ page import="org.apache.commons.fileupload.*"%>
 <% response.setContentType("text/html");
 
-//   Í¼Æ¬ÉÏ´«Â·¾¶
-   String uploadPath = request.getSession().getServletContext().getRealPath("/")+"img/";
-//   Í¼Æ¬ÁÙÊ±ÉÏ´«Â·¾¶
-   String tempPath = request.getSession().getServletContext().getRealPath("/")+"upload/";
-//   Í¼Æ¬ÍøÂçÏà¶ÔÂ·¾¶
+//   å›¾ç‰‡ä¸Šä¼ è·¯å¾„
+   //String uploadPath = request.getSession().getServletContext().getRealPath("/")+"img\\";
+   //String path=application.getRealPath(request.getRequestURI());  
+   //String dir=new File(path).getParent();  
+   String uploadPath = request.getSession().getServletContext().getRealPath("/") +"img\\";
+   out.println(uploadPath+"\n");
+//   å›¾ç‰‡ä¸´æ—¶ä¸Šä¼ è·¯å¾„
+   String tempPath = request.getSession().getServletContext().getRealPath("/") +"/upload/";
+//   å›¾ç‰‡ç½‘ç»œç›¸å¯¹è·¯å¾„
    String imagePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath()+"/"; 
-//   ÎÄ¼ş¼Ğ²»´æÔÚ¾Í×Ô¶¯´´½¨£º
+//   æ–‡ä»¶å¤¹ä¸å­˜åœ¨å°±è‡ªåŠ¨åˆ›å»ºï¼š
 	
    if(!new File(uploadPath).isDirectory())
    	new File(uploadPath).mkdirs();
@@ -18,26 +22,26 @@
    	new File(tempPath).mkdirs();
    try {
    DiskFileUpload fu = new DiskFileUpload();
-//   ÉèÖÃ×î´óÎÄ¼ş³ß´ç£¬ÕâÀïÊÇ4MB
+//   è®¾ç½®æœ€å¤§æ–‡ä»¶å°ºå¯¸ï¼Œè¿™é‡Œæ˜¯4MB
    fu.setSizeMax(4194304);
-//   ÉèÖÃ»º³åÇø´óĞ¡£¬ÕâÀïÊÇ4kb
+//   è®¾ç½®ç¼“å†²åŒºå¤§å°ï¼Œè¿™é‡Œæ˜¯4kb
    fu.setSizeThreshold(4096);
-//   ÉèÖÃÁÙÊ±Ä¿Â¼£º
+//   è®¾ç½®ä¸´æ—¶ç›®å½•ï¼š
    fu.setRepositoryPath(tempPath);
-//   µÃµ½ËùÓĞµÄÎÄ¼ş£º
+//   å¾—åˆ°æ‰€æœ‰çš„æ–‡ä»¶ï¼š
    List fileItems = fu.parseRequest(request);
    Iterator i = fileItems.iterator();
-//   ÒÀ´Î´¦ÀíÃ¿Ò»¸öÎÄ¼ş£º
+//   ä¾æ¬¡å¤„ç†æ¯ä¸€ä¸ªæ–‡ä»¶ï¼š
 
    while(i.hasNext()) {
    FileItem file = (FileItem)i.next();
-//   »ñµÃÎÄ¼şÃû£¬Õâ¸öÎÄ¼şÃûÊÇÓÃ»§ÉÏ´«Ê±ÓÃ»§µÄ¾ø¶ÔÂ·¾¶£º
+//   è·å¾—æ–‡ä»¶åï¼Œè¿™ä¸ªæ–‡ä»¶åæ˜¯ç”¨æˆ·ä¸Šä¼ æ—¶ç”¨æˆ·çš„ç»å¯¹è·¯å¾„ï¼š
    String sourcefileName = file.getName();
    out.println(sourcefileName);
    out.println("dsfsdf"+sourcefileName.endsWith(".jpg"));
    if(sourcefileName!=null&&(sourcefileName.endsWith(".jpg")||sourcefileName.endsWith(".gif"))) {
   
-//   ÔÚÕâÀï¿ÉÒÔ¼ÇÂ¼ÓÃ»§ºÍÎÄ¼şĞÅÏ¢,Éú³ÉÉÏ´«ºóµÄÎÄ¼şÃû
+//   åœ¨è¿™é‡Œå¯ä»¥è®°å½•ç”¨æˆ·å’Œæ–‡ä»¶ä¿¡æ¯,ç”Ÿæˆä¸Šä¼ åçš„æ–‡ä»¶å
    String destinationfileName=null;
    Random rd = new Random();
    Calendar time = Calendar.getInstance();
@@ -68,18 +72,19 @@
    }
    File f1=new File(uploadPath+ destinationfileName);
    file.write(f1);
-   out.print(request.getRealPath("/"+sourcefileName)+"³É¹¦ÉÏ´«£¡") ;
+   out.print(request.getRealPath("/"+sourcefileName)+"æˆåŠŸä¸Šä¼ ï¼") ;
 
-   out.print("<img src="+imagePath+"upload/images/"+destinationfileName+">");
+   //out.print("<img src="+uploadPath+destinationfileName+">");
+   out.print("<img src= ../img/"+destinationfileName+">");
    }else{
-   out.println("ÉÏ´«ÎÄ¼ş³ö´í£¬Ö»ÄÜÉÏ´« *.jpg , *.gif,*png");
+   out.println("ä¸Šä¼ æ–‡ä»¶å‡ºé”™ï¼Œåªèƒ½ä¸Šä¼  *.jpg , *.gif,*.png");
    }
    }
-//   Ìø×ªµ½ÉÏ´«³É¹¦ÌáÊ¾Ò³Ãæ
+//   è·³è½¬åˆ°ä¸Šä¼ æˆåŠŸæç¤ºé¡µé¢
 
    }
    catch(Exception e) {
-//   ¿ÉÒÔÌø×ª³ö´íÒ³Ãæ
+//   å¯ä»¥è·³è½¬å‡ºé”™é¡µé¢
    }
    out.flush();
    out.close();
