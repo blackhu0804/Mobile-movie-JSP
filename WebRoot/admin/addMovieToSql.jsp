@@ -1,4 +1,9 @@
 <%@ page language="java" import="java.util.*,java.sql.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*,java.io.*" pageEncoding="UTF-8"%>
+<%@ page import="org.apache.commons.fileupload.servlet.ServletFileUpload"%>
+<%@ page import="org.apache.commons.fileupload.disk.DiskFileItemFactory"%>
+<%@ page import="org.apache.commons.fileupload.*"%>
+<% response.setContentType("text/html");%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";

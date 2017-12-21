@@ -123,10 +123,6 @@
                         <input type="text" name="category" placeholder="请输入要添加的电影分类">
                     </div>
                     <div class="row">
-                        <label>图片:</label>
-                        <input type="file" name="img">
-                    </div>
-                    <div class="row">
                         <label>收藏:</label>
                         <input type="text" name="collection" placeholder="请输入要添加的收藏数">
                     </div>

@@ -16,6 +16,34 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/amazeui.min.css" />
 	<link rel="stylesheet" href="assets/css/app.css">
+	<style>
+		.file {
+		    position: relative;
+		    display: inline-block;
+		    background: #D0EEFF;
+		    border: 1px solid #99D3F5;
+		    border-radius: 4px;
+		    padding: 4px 12px;
+		    overflow: hidden;
+		    color: #1E88C7;
+		    text-decoration: none;
+		    text-indent: 0;
+		    line-height: 20px;
+		}
+		.file input {
+		    position: absolute;
+		    font-size: 100px;
+		    right: 0;
+		    top: 0;
+		    opacity: 0;
+		}
+		.file:hover {
+		    background: #AADFFD;
+		    border-color: #78C3F3;
+		    color: #004974;
+		    text-decoration: none;
+		}
+	</style>
 	<script src="assets/js/jquery.min.js"></script>
         <title>影评后台管理系统</title>
     </head>
@@ -27,20 +55,6 @@
             }
         %>
         <script src="assets/js/theme.js"></script>
-	<div class="am-g tpl-g">
-                <div class="tpl-skiner">
-                    <div class="tpl-skiner-toggle am-icon-cog">
-                    </div>
-                    <div class="tpl-skiner-content">
-                        <div class="tpl-skiner-content-title">
-                            选择主题
-                        </div>
-                        <div class="tpl-skiner-content-bar">
-                            <span class="skiner-color skiner-white" data-color="theme-white"></span>
-                            <span class="skiner-color skiner-black" data-color="theme-black"></span>
-                        </div>
-                    </div>
-		</div>
 		<!-- 头部 -->
 		<!-- <img src="/Movie/img/progress.gif"> -->
 		<header>
@@ -137,10 +151,13 @@
                                 %>
                                 
                                 <td>
-                                    <img src=<%=imgStr%> style="width:5em;">
-                                    <form action="./upload.jsp" method="post" enctype="multipart/form-data">
-                                        <input type="file" name="img">
-                                        <button type="submit" class="am-btn am-btn-secondary am-radius" style="margin-bottom: 1em;">修改图片</button>
+                                    <img src=<%=imgStr%> style="width:7em;">
+                                    <form style="margin-top:20px;" action="/Movie/upload?xx=<%=rs.getString("id") %>" method="post" enctype="multipart/form-data">
+	                                    <a href="javascript:;" class="file">选择文件
+	                                    	<input type="file" name="img">
+										</a>
+                                        
+                                        <button type="submit" class="am-btn am-btn-secondary am-radius" style="margin-bottom: 1em;">提交修改</button>
                                     </form>
                                 </td>
                                 <td style="display: block;width: 15em;height: 18em;overflow: auto"><%=rs.getString("detail")%></td>
